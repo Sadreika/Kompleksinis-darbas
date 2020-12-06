@@ -14,6 +14,13 @@ namespace StarPeru
             List<Combinations> flights = crawler.Start("HUU|LIM|2020|12|10|2020|12|17|E|R");
             FillDatabase(flights);
         }
+
+        public static void StartStarPeruFromGUI(string searchCriteria)
+        {
+            Crawler crawler = new Crawler();
+            List<Combinations> flights = crawler.Start(searchCriteria);
+            FillDatabase(flights);
+        }
         public static void FillDatabase(List<Combinations> combinations)
         {
             SqlConnection con = new SqlConnection(connectionString);

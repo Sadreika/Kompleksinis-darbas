@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using StarPeru;
 
 namespace GUI
 {
@@ -63,8 +58,17 @@ namespace GUI
             }
             bool isRt = isRtCheckBox.Checked;
             string searchCriteria = FormAndGiveSearchCriteriaToCrawler(origin, destination, departureDate, arrivalDate, flightClass, isRt);
+            StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
+            ShowMessage();
+            surinktiDuomenysdataGridView.Update();
+            surinktiDuomenysdataGridView.Refresh();
         }
-
+        private void ShowMessage()
+        {
+            string message = "Paieška baigta";
+            string caption = "Pranešimas";
+            var result = MessageBox.Show(message, caption,MessageBoxButtons.OK);
+        }
         private void FillDataGridViewWithFlights()
         {
             SqlConnection connection = new SqlConnection(connectionString);
