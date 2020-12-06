@@ -50,10 +50,10 @@ namespace GUI
             // 
             // ieskotiButton
             // 
-            this.ieskotiButton.Location = new System.Drawing.Point(861, 39);
-            this.ieskotiButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ieskotiButton.Location = new System.Drawing.Point(1183, 48);
+            this.ieskotiButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ieskotiButton.Name = "ieskotiButton";
-            this.ieskotiButton.Size = new System.Drawing.Size(102, 24);
+            this.ieskotiButton.Size = new System.Drawing.Size(136, 30);
             this.ieskotiButton.TabIndex = 0;
             this.ieskotiButton.Text = "Ieškoti";
             this.ieskotiButton.UseVisualStyleBackColor = true;
@@ -62,60 +62,54 @@ namespace GUI
             // avialinijaLabel
             // 
             this.avialinijaLabel.AutoSize = true;
-            this.avialinijaLabel.Location = new System.Drawing.Point(14, 15);
-            this.avialinijaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.avialinijaLabel.Location = new System.Drawing.Point(19, 18);
             this.avialinijaLabel.Name = "avialinijaLabel";
-            this.avialinijaLabel.Size = new System.Drawing.Size(48, 13);
+            this.avialinijaLabel.Size = new System.Drawing.Size(63, 17);
             this.avialinijaLabel.TabIndex = 1;
             this.avialinijaLabel.Text = "Avialinija";
             // 
             // isvykimoOroUostasLabel
             // 
             this.isvykimoOroUostasLabel.AutoSize = true;
-            this.isvykimoOroUostasLabel.Location = new System.Drawing.Point(219, 12);
-            this.isvykimoOroUostasLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.isvykimoOroUostasLabel.Location = new System.Drawing.Point(292, 15);
             this.isvykimoOroUostasLabel.Name = "isvykimoOroUostasLabel";
-            this.isvykimoOroUostasLabel.Size = new System.Drawing.Size(100, 13);
+            this.isvykimoOroUostasLabel.Size = new System.Drawing.Size(132, 17);
             this.isvykimoOroUostasLabel.TabIndex = 2;
             this.isvykimoOroUostasLabel.Text = "Išvykimo oro uostas";
             // 
             // atvykimoOroUostasLabel
             // 
             this.atvykimoOroUostasLabel.AutoSize = true;
-            this.atvykimoOroUostasLabel.Location = new System.Drawing.Point(219, 46);
-            this.atvykimoOroUostasLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.atvykimoOroUostasLabel.Location = new System.Drawing.Point(292, 57);
             this.atvykimoOroUostasLabel.Name = "atvykimoOroUostasLabel";
-            this.atvykimoOroUostasLabel.Size = new System.Drawing.Size(102, 13);
+            this.atvykimoOroUostasLabel.Size = new System.Drawing.Size(135, 17);
             this.atvykimoOroUostasLabel.TabIndex = 3;
             this.atvykimoOroUostasLabel.Text = "Atvykimo oro uostas";
             // 
             // klaseLabel
             // 
             this.klaseLabel.AutoSize = true;
-            this.klaseLabel.Location = new System.Drawing.Point(727, 14);
-            this.klaseLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.klaseLabel.Location = new System.Drawing.Point(987, 19);
             this.klaseLabel.Name = "klaseLabel";
-            this.klaseLabel.Size = new System.Drawing.Size(33, 13);
+            this.klaseLabel.Size = new System.Drawing.Size(43, 17);
             this.klaseLabel.TabIndex = 4;
             this.klaseLabel.Text = "Klasė";
             // 
             // IsvykimoDataLabel
             // 
             this.IsvykimoDataLabel.AutoSize = true;
-            this.IsvykimoDataLabel.Location = new System.Drawing.Point(424, 12);
-            this.IsvykimoDataLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.IsvykimoDataLabel.Location = new System.Drawing.Point(565, 15);
             this.IsvykimoDataLabel.Name = "IsvykimoDataLabel";
-            this.IsvykimoDataLabel.Size = new System.Drawing.Size(72, 13);
+            this.IsvykimoDataLabel.Size = new System.Drawing.Size(93, 17);
             this.IsvykimoDataLabel.TabIndex = 5;
             this.IsvykimoDataLabel.Text = "Išvykimo data";
             // 
             // AtvykimoDataLabel
             // 
             this.AtvykimoDataLabel.AutoSize = true;
-            this.AtvykimoDataLabel.Location = new System.Drawing.Point(422, 46);
-            this.AtvykimoDataLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AtvykimoDataLabel.Location = new System.Drawing.Point(563, 57);
             this.AtvykimoDataLabel.Name = "AtvykimoDataLabel";
-            this.AtvykimoDataLabel.Size = new System.Drawing.Size(74, 13);
+            this.AtvykimoDataLabel.Size = new System.Drawing.Size(96, 17);
             this.AtvykimoDataLabel.TabIndex = 6;
             this.AtvykimoDataLabel.Text = "Atvykimo data";
             // 
@@ -123,36 +117,36 @@ namespace GUI
             // 
             this.avialinijatextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.avialinijatextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.avialinijatextBox.Location = new System.Drawing.Point(79, 12);
-            this.avialinijatextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.avialinijatextBox.Location = new System.Drawing.Point(105, 15);
+            this.avialinijatextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.avialinijatextBox.Name = "avialinijatextBox";
-            this.avialinijatextBox.Size = new System.Drawing.Size(122, 20);
+            this.avialinijatextBox.Size = new System.Drawing.Size(161, 22);
             this.avialinijatextBox.TabIndex = 9;
             this.avialinijatextBox.Text = "Įveskite norimą avialiniją";
             // 
             // isvykimoOroUostastextBox
             // 
-            this.isvykimoOroUostastextBox.Location = new System.Drawing.Point(328, 12);
-            this.isvykimoOroUostastextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.isvykimoOroUostastextBox.Location = new System.Drawing.Point(437, 15);
+            this.isvykimoOroUostastextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.isvykimoOroUostastextBox.Name = "isvykimoOroUostastextBox";
-            this.isvykimoOroUostastextBox.Size = new System.Drawing.Size(76, 20);
+            this.isvykimoOroUostastextBox.Size = new System.Drawing.Size(100, 22);
             this.isvykimoOroUostastextBox.TabIndex = 10;
             // 
             // atvykimoOroUostastextBox
             // 
-            this.atvykimoOroUostastextBox.Location = new System.Drawing.Point(328, 46);
-            this.atvykimoOroUostastextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.atvykimoOroUostastextBox.Location = new System.Drawing.Point(437, 57);
+            this.atvykimoOroUostastextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.atvykimoOroUostastextBox.Name = "atvykimoOroUostastextBox";
-            this.atvykimoOroUostastextBox.Size = new System.Drawing.Size(76, 20);
+            this.atvykimoOroUostastextBox.Size = new System.Drawing.Size(100, 22);
             this.atvykimoOroUostastextBox.TabIndex = 11;
             // 
             // isRtCheckBox
             // 
             this.isRtCheckBox.AutoSize = true;
-            this.isRtCheckBox.Location = new System.Drawing.Point(861, 13);
-            this.isRtCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.isRtCheckBox.Location = new System.Drawing.Point(1183, 16);
+            this.isRtCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.isRtCheckBox.Name = "isRtCheckBox";
-            this.isRtCheckBox.Size = new System.Drawing.Size(102, 17);
+            this.isRtCheckBox.Size = new System.Drawing.Size(130, 21);
             this.isRtCheckBox.TabIndex = 14;
             this.isRtCheckBox.Text = "Dvipusė kelionė";
             this.isRtCheckBox.UseVisualStyleBackColor = true;
@@ -160,12 +154,12 @@ namespace GUI
             // surinktiDuomenysdataGridView
             // 
             this.surinktiDuomenysdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.surinktiDuomenysdataGridView.Location = new System.Drawing.Point(11, 90);
-            this.surinktiDuomenysdataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.surinktiDuomenysdataGridView.Location = new System.Drawing.Point(15, 111);
+            this.surinktiDuomenysdataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.surinktiDuomenysdataGridView.Name = "surinktiDuomenysdataGridView";
             this.surinktiDuomenysdataGridView.RowHeadersWidth = 51;
             this.surinktiDuomenysdataGridView.RowTemplate.Height = 24;
-            this.surinktiDuomenysdataGridView.Size = new System.Drawing.Size(946, 304);
+            this.surinktiDuomenysdataGridView.Size = new System.Drawing.Size(1339, 599);
             this.surinktiDuomenysdataGridView.TabIndex = 15;
             // 
             // klaseComboBox
@@ -173,39 +167,43 @@ namespace GUI
             this.klaseComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.klaseComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.klaseComboBox.FormattingEnabled = true;
-            this.klaseComboBox.Location = new System.Drawing.Point(765, 11);
+            this.klaseComboBox.Location = new System.Drawing.Point(1038, 16);
+            this.klaseComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.klaseComboBox.Name = "klaseComboBox";
-            this.klaseComboBox.Size = new System.Drawing.Size(76, 21);
+            this.klaseComboBox.Size = new System.Drawing.Size(100, 24);
             this.klaseComboBox.TabIndex = 16;
             // 
             // pridetiButton
             // 
-            this.pridetiButton.Location = new System.Drawing.Point(730, 40);
+            this.pridetiButton.Location = new System.Drawing.Point(991, 51);
+            this.pridetiButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pridetiButton.Name = "pridetiButton";
-            this.pridetiButton.Size = new System.Drawing.Size(111, 23);
+            this.pridetiButton.Size = new System.Drawing.Size(148, 28);
             this.pridetiButton.TabIndex = 17;
             this.pridetiButton.Text = "Pridėti datas";
             this.pridetiButton.UseVisualStyleBackColor = true;
             // 
             // isvykimoDataDateTimePicker
             // 
-            this.isvykimoDataDateTimePicker.Location = new System.Drawing.Point(512, 12);
+            this.isvykimoDataDateTimePicker.Location = new System.Drawing.Point(683, 15);
+            this.isvykimoDataDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.isvykimoDataDateTimePicker.Name = "isvykimoDataDateTimePicker";
-            this.isvykimoDataDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.isvykimoDataDateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.isvykimoDataDateTimePicker.TabIndex = 19;
             // 
             // atvykimoDataDateTimePicker
             // 
-            this.atvykimoDataDateTimePicker.Location = new System.Drawing.Point(512, 46);
+            this.atvykimoDataDateTimePicker.Location = new System.Drawing.Point(683, 57);
+            this.atvykimoDataDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.atvykimoDataDateTimePicker.Name = "atvykimoDataDateTimePicker";
-            this.atvykimoDataDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.atvykimoDataDateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.atvykimoDataDateTimePicker.TabIndex = 20;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 405);
+            this.ClientSize = new System.Drawing.Size(1366, 732);
             this.Controls.Add(this.atvykimoDataDateTimePicker);
             this.Controls.Add(this.isvykimoDataDateTimePicker);
             this.Controls.Add(this.pridetiButton);
@@ -222,9 +220,9 @@ namespace GUI
             this.Controls.Add(this.isvykimoOroUostasLabel);
             this.Controls.Add(this.avialinijaLabel);
             this.Controls.Add(this.ieskotiButton);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Skrydžių paieška";
             ((System.ComponentModel.ISupportInitialize)(this.surinktiDuomenysdataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
