@@ -10,8 +10,8 @@ namespace StarPeru
         public string Destination;
         public decimal Price;
         public string FlightNumber;
-        public DateTime departureTime;
-        public DateTime arrivalTime;
+        public DateTime DepartureTime;
+        public DateTime ArrivalTime;
 
         public Flight(string[] sectorOriginAndDestination, string sectorInfo)
         {
@@ -31,11 +31,11 @@ namespace StarPeru
                 DateTime date;
                 if (DateTime.TryParse(flightInfo[3], out date))
                 {
-                    departureTime = date;
+                    DepartureTime = date;
                 }
                 if (DateTime.TryParse(flightInfo[4], out date))
                 {
-                    arrivalTime = date;
+                    ArrivalTime = date;
                 }
             }
             catch(Exception e)
