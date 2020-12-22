@@ -204,6 +204,7 @@ namespace GUI
             this.atvykimoDataDateTimePicker.Name = "atvykimoDataDateTimePicker";
             this.atvykimoDataDateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.atvykimoDataDateTimePicker.TabIndex = 20;
+            this.atvykimoDataDateTimePicker.MinDate = DateTime.Now;
             // 
             // MainForm
             // 
