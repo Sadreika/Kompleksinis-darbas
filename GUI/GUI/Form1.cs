@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 using StarPeru;
 
@@ -19,10 +21,19 @@ namespace GUI
 
         private void prepareTextBoxes()
         {
-            string[] suggestionsArray = { "SAS", "Fly540", "Alaska Airlines", "StarPeru" }; //iš db ims
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT Airline FROM [FlightsDatabase].[dbo].[Airlines]", connection);
+            
+            DataTable data = new DataTable();
+            sqlDataAdapter.Fill(data);
+            List<string> suggestionsList = data.Rows.OfType<DataRow>().Select(x => x.Field<string>("Airline")).ToList();
+            
             AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-            collection.AddRange(suggestionsArray);
+            collection.AddRange(suggestionsList.ToArray());
             avialinijatextBox.AutoCompleteCustomSource = collection;
+
+            connection.Close();
         }
 
         private void prepareComboBoxes()
@@ -58,7 +69,7 @@ namespace GUI
             }
             bool isRt = isRtCheckBox.Checked;
             string searchCriteria = FormAndGiveSearchCriteriaToCrawler(origin, destination, departureDate, arrivalDate, flightClass, isRt);
-            StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
+            //StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
             ShowMessage();
             surinktiDuomenysdataGridView.Update();
             surinktiDuomenysdataGridView.Refresh();
