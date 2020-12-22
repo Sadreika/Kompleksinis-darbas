@@ -136,5 +136,16 @@ namespace GUI
                 arrivalDate.Year + "|" + arrivalDate.Month + "|" + arrivalDate.Day + "|" +
                 flightClass + "|" + isRtString;
         }
+        private void isRtCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(isRtCheckBox.Checked)
+            {
+                atvykimoDataDateTimePicker.Enabled = true;
+            }
+            else
+            {
+                atvykimoDataDateTimePicker.Enabled = false;
+            }
+        }
     }
 }

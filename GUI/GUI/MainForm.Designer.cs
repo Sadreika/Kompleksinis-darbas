@@ -154,6 +154,7 @@ namespace GUI
             this.isRtCheckBox.TabIndex = 14;
             this.isRtCheckBox.Text = "Dvipusė kelionė";
             this.isRtCheckBox.UseVisualStyleBackColor = true;
+            this.isRtCheckBox.CheckedChanged += new System.EventHandler(this.isRtCheckBox_CheckedChanged);
             // 
             // surinktiDuomenysdataGridView
             // 
@@ -192,19 +193,22 @@ namespace GUI
             // 
             this.isvykimoDataDateTimePicker.Location = new System.Drawing.Point(683, 15);
             this.isvykimoDataDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.isvykimoDataDateTimePicker.MinDate = new System.DateTime(2020, 12, 22, 17, 15, 46, 44);
             this.isvykimoDataDateTimePicker.Name = "isvykimoDataDateTimePicker";
             this.isvykimoDataDateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.isvykimoDataDateTimePicker.TabIndex = 19;
-            this.isvykimoDataDateTimePicker.MinDate = DateTime.Now;
+            this.isvykimoDataDateTimePicker.Value = new System.DateTime(2020, 12, 22, 17, 15, 46, 44);
             // 
             // atvykimoDataDateTimePicker
             // 
+            this.atvykimoDataDateTimePicker.Enabled = false;
             this.atvykimoDataDateTimePicker.Location = new System.Drawing.Point(683, 57);
             this.atvykimoDataDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.atvykimoDataDateTimePicker.MinDate = new System.DateTime(2020, 12, 22, 17, 15, 46, 48);
             this.atvykimoDataDateTimePicker.Name = "atvykimoDataDateTimePicker";
             this.atvykimoDataDateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.atvykimoDataDateTimePicker.TabIndex = 20;
-            this.atvykimoDataDateTimePicker.MinDate = DateTime.Now;
+            this.atvykimoDataDateTimePicker.Value = new System.DateTime(2020, 12, 22, 17, 15, 46, 48);
             // 
             // MainForm
             // 
