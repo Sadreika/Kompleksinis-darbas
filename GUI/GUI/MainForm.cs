@@ -81,30 +81,36 @@ namespace GUI
         }
         private bool isSearchCriteriaCorrect(string origin, string destination, DateTime departureDate, DateTime arrivalDate, string flightClass, bool isRt)
         {
+            bool isCorrect = true;
             TimeSpan ts = new TimeSpan(23, 59, 59);
             departureDate = departureDate.Date + ts;
             arrivalDate = arrivalDate.Date + ts;
 
-            if (origin == "" || destination == "")
+            isvykimoOroUostasWarning.Visible = false;
+            atvykimoOroUostasWarning.Visible = false;
+            isvykimoDataWarning.Visible = false;
+            atvykimoDataWarning.Visible = false;
+
+            if (origin == "")
             {
-                return false;
+                isCorrect = false;
+                isvykimoOroUostasWarning.Visible = true;
             }
-            if(departureDate < DateTime.Now)
+            if (destination == "")
             {
-                return false;
-            }
+                isCorrect = false;
+                atvykimoOroUostasWarning.Visible = true;
+            }  
             if(isRt)
             {
-                if(arrivalDate < DateTime.Now)
-                {
-                    return false;
-                }
                 if(departureDate >= arrivalDate)
                 {
-                    return false;
+                    isCorrect = false;
+                    isvykimoDataWarning.Visible = true;
+                    atvykimoDataWarning.Visible = true;
                 }
             }
-            return true;
+            return isCorrect;
         }
         private void ShowMessage()
         {
