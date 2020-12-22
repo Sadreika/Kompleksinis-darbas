@@ -1,7 +1,9 @@
 ﻿
+using System;
+
 namespace GUI
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -128,6 +130,7 @@ namespace GUI
             // 
             this.isvykimoOroUostastextBox.Location = new System.Drawing.Point(437, 15);
             this.isvykimoOroUostastextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.isvykimoOroUostastextBox.MaxLength = 3;
             this.isvykimoOroUostastextBox.Name = "isvykimoOroUostastextBox";
             this.isvykimoOroUostastextBox.Size = new System.Drawing.Size(100, 22);
             this.isvykimoOroUostastextBox.TabIndex = 10;
@@ -136,6 +139,7 @@ namespace GUI
             // 
             this.atvykimoOroUostastextBox.Location = new System.Drawing.Point(437, 57);
             this.atvykimoOroUostastextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.atvykimoOroUostastextBox.MaxLength = 3;
             this.atvykimoOroUostastextBox.Name = "atvykimoOroUostastextBox";
             this.atvykimoOroUostastextBox.Size = new System.Drawing.Size(100, 22);
             this.atvykimoOroUostastextBox.TabIndex = 11;
@@ -168,15 +172,16 @@ namespace GUI
             this.klaseComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.klaseComboBox.FormattingEnabled = true;
             this.klaseComboBox.Location = new System.Drawing.Point(1038, 16);
-            this.klaseComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.klaseComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.klaseComboBox.Name = "klaseComboBox";
             this.klaseComboBox.Size = new System.Drawing.Size(100, 24);
             this.klaseComboBox.TabIndex = 16;
+            this.klaseComboBox.Text = "Ekonominė";
             // 
             // pridetiButton
             // 
             this.pridetiButton.Location = new System.Drawing.Point(991, 51);
-            this.pridetiButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pridetiButton.Margin = new System.Windows.Forms.Padding(4);
             this.pridetiButton.Name = "pridetiButton";
             this.pridetiButton.Size = new System.Drawing.Size(148, 28);
             this.pridetiButton.TabIndex = 17;
@@ -186,20 +191,21 @@ namespace GUI
             // isvykimoDataDateTimePicker
             // 
             this.isvykimoDataDateTimePicker.Location = new System.Drawing.Point(683, 15);
-            this.isvykimoDataDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.isvykimoDataDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.isvykimoDataDateTimePicker.Name = "isvykimoDataDateTimePicker";
             this.isvykimoDataDateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.isvykimoDataDateTimePicker.TabIndex = 19;
+            this.isvykimoDataDateTimePicker.MinDate = DateTime.Now;
             // 
             // atvykimoDataDateTimePicker
             // 
             this.atvykimoDataDateTimePicker.Location = new System.Drawing.Point(683, 57);
-            this.atvykimoDataDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.atvykimoDataDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.atvykimoDataDateTimePicker.Name = "atvykimoDataDateTimePicker";
             this.atvykimoDataDateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.atvykimoDataDateTimePicker.TabIndex = 20;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,7 +227,7 @@ namespace GUI
             this.Controls.Add(this.avialinijaLabel);
             this.Controls.Add(this.ieskotiButton);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Skrydžių paieška";
             ((System.ComponentModel.ISupportInitialize)(this.surinktiDuomenysdataGridView)).EndInit();
             this.ResumeLayout(false);
