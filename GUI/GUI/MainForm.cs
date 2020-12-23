@@ -153,5 +153,11 @@ namespace GUI
                 atvykimoDataDateTimePicker.Enabled = false;
             }
         }
+
+        private void pridetiButton_Click(object sender, EventArgs e)
+        {
+            DateAddForm dateAddForm = new DateAddForm();
+            dateAddForm.Show();
+        }
     }
 }

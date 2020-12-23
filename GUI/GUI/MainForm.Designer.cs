@@ -192,6 +192,7 @@ namespace GUI
             this.pridetiButton.TabIndex = 17;
             this.pridetiButton.Text = "Pridėti datas";
             this.pridetiButton.UseVisualStyleBackColor = true;
+            this.pridetiButton.Click += new System.EventHandler(this.pridetiButton_Click);
             // 
             // isvykimoDataDateTimePicker
             // 
@@ -262,7 +263,7 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1347, 732);
+            this.ClientSize = new System.Drawing.Size(1342, 733);
             this.Controls.Add(this.atvykimoDataWarning);
             this.Controls.Add(this.isvykimoDataWarning);
             this.Controls.Add(this.atvykimoOroUostasWarning);
@@ -283,6 +284,7 @@ namespace GUI
             this.Controls.Add(this.isvykimoOroUostasLabel);
             this.Controls.Add(this.avialinijaLabel);
             this.Controls.Add(this.ieskotiButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "Skrydžių paieška";
