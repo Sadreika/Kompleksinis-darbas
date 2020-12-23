@@ -16,9 +16,37 @@ namespace GUI
         public DateAddForm()
         {
             InitializeComponent();
+            FillDateListdataGridViewWithDates();
         }
 
-        private void dvipuseKelioneCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void FillDateListdataGridViewWithDates()
+        {    
+            DataTable data = new DataTable();
+            data.Columns.Add("Departure date");
+            data.Columns.Add("Arrival date");
+
+            foreach(Dates date in DateList)
+            {
+                data.Rows.Add(date.departureDate);
+                
+                //data.Rows.Add(date.arrivalDate);
+            }
+            
+            dateListdataGridView.DataSource = data;
+
+
+            // SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT Airline FROM [FlightsDatabase].[dbo].[Airlines]", connection);
+            
+            //DataTable data = new DataTable();
+            //sqlDataAdapter.Fill(data);
+            //List<string> suggestionsList = data.Rows.OfType<DataRow>().Select(x => x.Field<string>("Airline")).ToList();
+            
+            //AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+            //collection.AddRange(suggestionsList.ToArray());
+            //avialinijatextBox.AutoCompleteCustomSource = collection;
+
+        }
+        private void DvipuseKelioneCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (isRt.Checked)
             {
@@ -28,10 +56,9 @@ namespace GUI
             {
                 atvykimoDateTimePicker.Enabled = false;
             }
-
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
             IsvykimoDataWarningLabel.Visible = false;
             atvykimoDataWarningLabel.Visible = false;
@@ -44,9 +71,16 @@ namespace GUI
                 }
                 else
                 {
-
+                    Dates dates = new Dates(isvykimoDateTimePicker.Value, atvykimoDateTimePicker.Value);
+                    DateList.Add(dates);
                 }
             }
+            else
+            {
+                Dates dates = new Dates(isvykimoDateTimePicker.Value);
+                DateList.Add(dates);
+            }
+            FillDateListdataGridViewWithDates();
         }
     }
 }

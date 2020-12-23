@@ -53,6 +53,7 @@
     <Compile Include="DateAddForm.Designer.cs">
       <DependentUpon>DateAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dates.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

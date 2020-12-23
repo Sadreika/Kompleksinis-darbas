@@ -90,7 +90,7 @@ namespace GUI
             this.isRt.TabIndex = 4;
             this.isRt.Text = "Dvipusė kelionė";
             this.isRt.UseVisualStyleBackColor = true;
-            this.isRt.CheckedChanged += new System.EventHandler(this.dvipuseKelioneCheckBox_CheckedChanged);
+            this.isRt.CheckedChanged += new System.EventHandler(this.DvipuseKelioneCheckBox_CheckedChanged);
             // 
             // addButton
             // 
@@ -100,7 +100,7 @@ namespace GUI
             this.addButton.TabIndex = 5;
             this.addButton.Text = "Pridėti";
             this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // dateListdataGridView
             // 

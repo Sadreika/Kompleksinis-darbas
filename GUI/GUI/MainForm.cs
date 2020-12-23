@@ -76,7 +76,7 @@ namespace GUI
             }
             else
             {
-                EmptyFieldMessage();
+                ErrorMessage();
             }
         }
         private bool isSearchCriteriaCorrect(string origin, string destination, DateTime departureDate, DateTime arrivalDate, string flightClass, bool isRt)
@@ -118,7 +118,7 @@ namespace GUI
             string caption = "Pranešimas";
             var result = MessageBox.Show(message, caption,MessageBoxButtons.OK);
         }
-        private void EmptyFieldMessage()
+        private void ErrorMessage()
         {
             string message = "Paieškos kriterijai užpildyti neteisingai";
             string caption = "Klaidos pranešimas";
