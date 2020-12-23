@@ -112,15 +112,17 @@ namespace GUI
             this.dateListdataGridView.RowTemplate.Height = 24;
             this.dateListdataGridView.Size = new System.Drawing.Size(436, 407);
             this.dateListdataGridView.TabIndex = 6;
+            this.dateListdataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DateListdataGridView_CellClick);
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(364, 135);
+            this.removeButton.Location = new System.Drawing.Point(364, 131);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
             this.removeButton.TabIndex = 7;
             this.removeButton.Text = "Pašalinti";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // IsvykimoDataWarningLabel
             // 
@@ -152,6 +154,7 @@ namespace GUI
             this.saveButton.TabIndex = 10;
             this.saveButton.Text = "Išsaugoti";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // DateAddForm
             // 
@@ -172,6 +175,7 @@ namespace GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DateAddForm";
             this.Text = "Laikų pridėjimo langas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DateAddForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dateListdataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

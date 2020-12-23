@@ -6,7 +6,6 @@ namespace GUI
     {
         public DateTime departureDate;
         public DateTime? arrivalDate;
-
         public Dates(DateTime departureDate, DateTime? arrivalDate = null)
         {
             this.departureDate = departureDate;

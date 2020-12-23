@@ -1,24 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Windows.Forms;
-using StarPeru;
-
-namespace GUI
+﻿namespace GUI
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.Linq;
+    using System.Windows.Forms;
+    using StarPeru;
     public partial class MainForm : Form
     {
+        public List<Dates> DateList = new List<Dates>();
         private string connectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=FlightsDatabase;Integrated Security=True";
+        public void FillDateList(List<Dates> dates)
+        {
+            DateList = dates;
+        }
         public MainForm()
         {
             InitializeComponent();
-            prepareTextBoxes();
-            prepareComboBoxes();
+            PrepareTextBoxes();
+            PrepareComboBoxes();
             FillDataGridViewWithFlights();
         }
-        private void prepareTextBoxes()
+        private void PrepareTextBoxes()
         {
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
@@ -34,7 +38,7 @@ namespace GUI
 
             connection.Close();
         }
-        private void prepareComboBoxes()
+        private void PrepareComboBoxes()
         {
             string[] suggestionsArray = new string[] { "Ekonominė", "Verslo", "Premium", "Pirma" };
             klaseComboBox.Items.AddRange(suggestionsArray);
@@ -64,12 +68,13 @@ namespace GUI
                 default:
                     break;
             }
+
             bool isRt = isRtCheckBox.Checked;
 
             if(isSearchCriteriaCorrect(origin, destination, departureDate, arrivalDate, flightClass, isRt))
             {
                 string searchCriteria = FormAndGiveSearchCriteriaToCrawler(origin, destination, departureDate, arrivalDate, flightClass, isRt);
-                //StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
+                StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
                 ShowMessage();
                 surinktiDuomenysdataGridView.Update();
                 surinktiDuomenysdataGridView.Refresh();
@@ -77,6 +82,26 @@ namespace GUI
             else
             {
                 ErrorMessage();
+            }
+
+            if(DateList.Count != 0)
+            {
+                CrawlDataFromList(origin, destination, flightClass);
+            }
+        }
+
+        private void CrawlDataFromList(string origin, string destination, string flightClass)
+        {
+            string searchCriteria;
+            bool isRt;
+            foreach(Dates date in DateList)
+            {
+                isRt = date.arrivalDate != null ? true : false;
+                searchCriteria = FormAndGiveSearchCriteriaToCrawler(origin, destination, date.departureDate, date.arrivalDate, flightClass, isRt);
+                StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
+                ShowMessage();
+                surinktiDuomenysdataGridView.Update();
+                surinktiDuomenysdataGridView.Refresh();
             }
         }
         private bool isSearchCriteriaCorrect(string origin, string destination, DateTime departureDate, DateTime arrivalDate, string flightClass, bool isRt)
@@ -134,12 +159,12 @@ namespace GUI
             surinktiDuomenysdataGridView.DataSource = data;
             connection.Close();
         }
-        private string FormAndGiveSearchCriteriaToCrawler(string origin, string destination, DateTime departureDate, DateTime arrivalDate, string flightClass, bool isRt)
+        private string FormAndGiveSearchCriteriaToCrawler(string origin, string destination, DateTime departureDate, DateTime? arrivalDate, string flightClass, bool isRt)
         {
             string isRtString = isRt ? "R" : "O";
             return origin + "|" + destination + "|" +
                 departureDate.Year + "|" + departureDate.Month + "|" + departureDate.Day + "|" +
-                arrivalDate.Year + "|" + arrivalDate.Month + "|" + arrivalDate.Day + "|" +
+                arrivalDate?.Year + "|" + arrivalDate?.Month + "|" + arrivalDate?.Day + "|" +
                 flightClass + "|" + isRtString;
         }
         private void isRtCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -153,10 +178,9 @@ namespace GUI
                 atvykimoDataDateTimePicker.Enabled = false;
             }
         }
-
         private void pridetiButton_Click(object sender, EventArgs e)
         {
-            DateAddForm dateAddForm = new DateAddForm();
+            DateAddForm dateAddForm = new DateAddForm(this);
             dateAddForm.Show();
         }
     }
