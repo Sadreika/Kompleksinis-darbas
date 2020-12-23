@@ -41,6 +41,7 @@ namespace GUI
             this.removeButton = new System.Windows.Forms.Button();
             this.IsvykimoDataWarningLabel = new System.Windows.Forms.Label();
             this.atvykimoDataWarningLabel = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dateListdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,27 +65,27 @@ namespace GUI
             // 
             // isvykimoDateTimePicker
             // 
-            this.isvykimoDateTimePicker.Location = new System.Drawing.Point(145, 31);
+            this.isvykimoDateTimePicker.Location = new System.Drawing.Point(191, 31);
             this.isvykimoDateTimePicker.MinDate = new System.DateTime(2020, 12, 23, 15, 58, 49, 149);
             this.isvykimoDateTimePicker.Name = "isvykimoDateTimePicker";
-            this.isvykimoDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.isvykimoDateTimePicker.Size = new System.Drawing.Size(248, 22);
             this.isvykimoDateTimePicker.TabIndex = 2;
             this.isvykimoDateTimePicker.Value = new System.DateTime(2020, 12, 23, 15, 58, 49, 149);
             // 
             // atvykimoDateTimePicker
             // 
             this.atvykimoDateTimePicker.Enabled = false;
-            this.atvykimoDateTimePicker.Location = new System.Drawing.Point(145, 84);
+            this.atvykimoDateTimePicker.Location = new System.Drawing.Point(191, 84);
             this.atvykimoDateTimePicker.MinDate = new System.DateTime(2020, 12, 23, 15, 58, 49, 150);
             this.atvykimoDateTimePicker.Name = "atvykimoDateTimePicker";
-            this.atvykimoDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.atvykimoDateTimePicker.Size = new System.Drawing.Size(248, 22);
             this.atvykimoDateTimePicker.TabIndex = 3;
             this.atvykimoDateTimePicker.Value = new System.DateTime(2020, 12, 23, 15, 58, 49, 150);
             // 
             // isRt
             // 
             this.isRt.AutoSize = true;
-            this.isRt.Location = new System.Drawing.Point(29, 135);
+            this.isRt.Location = new System.Drawing.Point(29, 133);
             this.isRt.Name = "isRt";
             this.isRt.Size = new System.Drawing.Size(130, 21);
             this.isRt.TabIndex = 4;
@@ -94,7 +95,7 @@ namespace GUI
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(165, 133);
+            this.addButton.Location = new System.Drawing.Point(191, 131);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 5;
@@ -109,12 +110,12 @@ namespace GUI
             this.dateListdataGridView.Name = "dateListdataGridView";
             this.dateListdataGridView.RowHeadersWidth = 51;
             this.dateListdataGridView.RowTemplate.Height = 24;
-            this.dateListdataGridView.Size = new System.Drawing.Size(331, 407);
+            this.dateListdataGridView.Size = new System.Drawing.Size(436, 407);
             this.dateListdataGridView.TabIndex = 6;
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(270, 135);
+            this.removeButton.Location = new System.Drawing.Point(364, 135);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
             this.removeButton.TabIndex = 7;
@@ -125,7 +126,7 @@ namespace GUI
             // 
             this.IsvykimoDataWarningLabel.AutoSize = true;
             this.IsvykimoDataWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.IsvykimoDataWarningLabel.Location = new System.Drawing.Point(356, 31);
+            this.IsvykimoDataWarningLabel.Location = new System.Drawing.Point(450, 31);
             this.IsvykimoDataWarningLabel.Name = "IsvykimoDataWarningLabel";
             this.IsvykimoDataWarningLabel.Size = new System.Drawing.Size(11, 17);
             this.IsvykimoDataWarningLabel.TabIndex = 8;
@@ -136,18 +137,28 @@ namespace GUI
             // 
             this.atvykimoDataWarningLabel.AutoSize = true;
             this.atvykimoDataWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.atvykimoDataWarningLabel.Location = new System.Drawing.Point(356, 89);
+            this.atvykimoDataWarningLabel.Location = new System.Drawing.Point(450, 89);
             this.atvykimoDataWarningLabel.Name = "atvykimoDataWarningLabel";
             this.atvykimoDataWarningLabel.Size = new System.Drawing.Size(11, 17);
             this.atvykimoDataWarningLabel.TabIndex = 9;
             this.atvykimoDataWarningLabel.Text = "!";
             this.atvykimoDataWarningLabel.Visible = false;
             // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(210, 602);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 10;
+            this.saveButton.Text = "Išsaugoti";
+            this.saveButton.UseVisualStyleBackColor = true;
+            // 
             // DateAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 632);
+            this.ClientSize = new System.Drawing.Size(503, 632);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.atvykimoDataWarningLabel);
             this.Controls.Add(this.IsvykimoDataWarningLabel);
             this.Controls.Add(this.removeButton);
@@ -179,5 +190,6 @@ namespace GUI
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Label IsvykimoDataWarningLabel;
         private System.Windows.Forms.Label atvykimoDataWarningLabel;
+        private System.Windows.Forms.Button saveButton;
     }
 }

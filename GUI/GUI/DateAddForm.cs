@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -27,24 +22,12 @@ namespace GUI
 
             foreach(Dates date in DateList)
             {
-                data.Rows.Add(date.departureDate);
-                
-                //data.Rows.Add(date.arrivalDate);
+                data.Rows.Add(date.departureDate, date.arrivalDate);
             }
             
             dateListdataGridView.DataSource = data;
-
-
-            // SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT Airline FROM [FlightsDatabase].[dbo].[Airlines]", connection);
-            
-            //DataTable data = new DataTable();
-            //sqlDataAdapter.Fill(data);
-            //List<string> suggestionsList = data.Rows.OfType<DataRow>().Select(x => x.Field<string>("Airline")).ToList();
-            
-            //AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
-            //collection.AddRange(suggestionsList.ToArray());
-            //avialinijatextBox.AutoCompleteCustomSource = collection;
-
+            dateListdataGridView.Columns[0].Width = 145;
+            dateListdataGridView.Columns[1].Width = 145;
         }
         private void DvipuseKelioneCheckBox_CheckedChanged(object sender, EventArgs e)
         {
