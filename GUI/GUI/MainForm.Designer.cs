@@ -51,12 +51,13 @@ namespace GUI
             this.atvykimoOroUostasWarning = new System.Windows.Forms.Label();
             this.isvykimoDataWarning = new System.Windows.Forms.Label();
             this.atvykimoDataWarning = new System.Windows.Forms.Label();
+            this.markCheapest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.surinktiDuomenysdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // ieskotiButton
             // 
-            this.ieskotiButton.Location = new System.Drawing.Point(1189, 52);
+            this.ieskotiButton.Location = new System.Drawing.Point(1194, 53);
             this.ieskotiButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ieskotiButton.Name = "ieskotiButton";
             this.ieskotiButton.Size = new System.Drawing.Size(136, 30);
@@ -151,7 +152,7 @@ namespace GUI
             // isRtCheckBox
             // 
             this.isRtCheckBox.AutoSize = true;
-            this.isRtCheckBox.Location = new System.Drawing.Point(1189, 20);
+            this.isRtCheckBox.Location = new System.Drawing.Point(1194, 21);
             this.isRtCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.isRtCheckBox.Name = "isRtCheckBox";
             this.isRtCheckBox.Size = new System.Drawing.Size(130, 21);
@@ -259,11 +260,23 @@ namespace GUI
             this.atvykimoDataWarning.Text = "!";
             this.atvykimoDataWarning.Visible = false;
             // 
+            // markCheapest
+            // 
+            this.markCheapest.Location = new System.Drawing.Point(1182, 721);
+            this.markCheapest.Name = "markCheapest";
+            this.markCheapest.Size = new System.Drawing.Size(148, 28);
+            this.markCheapest.TabIndex = 25;
+            this.markCheapest.Text = "Pažymėti pigiausius";
+            this.markCheapest.UseVisualStyleBackColor = true;
+            this.markCheapest.Click += new System.EventHandler(this.markCheapest_Click);
+            this.markCheapest.Enabled = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1342, 733);
+            this.ClientSize = new System.Drawing.Size(1342, 756);
+            this.Controls.Add(this.markCheapest);
             this.Controls.Add(this.atvykimoDataWarning);
             this.Controls.Add(this.isvykimoDataWarning);
             this.Controls.Add(this.atvykimoOroUostasWarning);
@@ -316,6 +329,7 @@ namespace GUI
         private System.Windows.Forms.Label atvykimoOroUostasWarning;
         private System.Windows.Forms.Label isvykimoDataWarning;
         private System.Windows.Forms.Label atvykimoDataWarning;
+        private System.Windows.Forms.Button markCheapest;
     }
 }
 

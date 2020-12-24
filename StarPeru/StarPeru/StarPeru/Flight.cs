@@ -38,9 +38,8 @@ namespace StarPeru
                     ArrivalTime = date;
                 }
             }
-            catch(Exception e)
+            catch
             {
-
             }
         }
     }

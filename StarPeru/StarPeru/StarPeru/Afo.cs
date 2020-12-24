@@ -1,7 +1,6 @@
-﻿using System;
-
-namespace StarPeru
+﻿namespace StarPeru
 {
+    using System;
     public class Afo
     {
         public string Origin { get; }

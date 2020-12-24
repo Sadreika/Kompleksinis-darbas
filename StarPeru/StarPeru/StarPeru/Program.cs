@@ -32,7 +32,7 @@ namespace StarPeru
                 con.Open();
                 command.Parameters.AddWithValue("@OriginOutbound", combination.Outbound.Origin);
                 command.Parameters.AddWithValue("@DestinationOutbound", combination.Outbound.Destination);
-                command.Parameters.AddWithValue("@ConnectionOutbound", "null");
+                command.Parameters.AddWithValue("@ConnectionOutbound", "nėra");
                 command.Parameters.AddWithValue("@PriceOutbound", combination.Outbound.Price);
                 command.Parameters.AddWithValue("@DepartureTimeOutbound", combination.Outbound.DepartureTime);
                 command.Parameters.AddWithValue("@ArrivalTimeOutbound", combination.Outbound.ArrivalTime);
@@ -44,32 +44,40 @@ namespace StarPeru
                     command.Parameters.AddWithValue("@ConnectionInbound", "nėra");
                     command.Parameters.AddWithValue("@PriceInbound", combination.Inbound.Price);
                     command.Parameters.AddWithValue("@DepartureTimeInbound", combination.Inbound.DepartureTime);
-                    command.Parameters.AddWithValue("@ArrivalTimeInbound", combination.Inbound.ArrivalTime);
+                    command.Parameters.AddWithValue("@ArrivalTimeInbound", combination.Inbound.ArrivalTime); 
+                }
+
+                if(combination.Inbound != null)
+                {
+                    command.Parameters.AddWithValue("@TotalPrice", combination.Outbound.Price + combination.Inbound.Price);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@TotalPrice", combination.Outbound.Price);
                 }
                 
                 command.Parameters.AddWithValue("@Class", "E");
                 command.Parameters.AddWithValue("@Airline", "StarPeru");
-
+                
                 if(combination.Inbound != null)
                 {
                     command.CommandText = "INSERT [FlightsDatabase].[dbo].[StarPeru] (OriginOutbound, DestinationOutbound, ConnectionOutbound," +
                         "PriceOutbound, DepartureTimeOutbound, ArrivalTimeOutbound," +
                         "OriginInbound, DestinationInbound, ConnectionInbound," +
                         "PriceInbound, DepartureTimeInbound, ArrivalTimeInbound," +
-                        "Class, Airline)" +
+                        "Class, Airline, TotalPrice)" +
                         "VALUES (@OriginOutbound, @DestinationOutbound, @ConnectionOutbound, @PriceOutbound, @DepartureTimeOutbound," +
                         "@ArrivalTimeOutbound, @OriginInbound, @DestinationInbound, @ConnectionInbound, @PriceInbound, @DepartureTimeInbound," +
-                        "@ArrivalTimeInbound, @Class, @Airline)";
+                        "@ArrivalTimeInbound, @Class, @Airline, @TotalPrice)";
                 }
                 else
                 {
                     command.CommandText = "INSERT [FlightsDatabase].[dbo].[StarPeru] (OriginOutbound, DestinationOutbound, ConnectionOutbound," +
                         "PriceOutbound, DepartureTimeOutbound, ArrivalTimeOutbound," +
-                        "Class, Airline)" +
+                        "Class, Airline, TotalPrice)" +
                         "VALUES (@OriginOutbound, @DestinationOutbound, @ConnectionOutbound, @PriceOutbound, @DepartureTimeOutbound," +
-                        "@ArrivalTimeOutbound, @Class, @Airline)";
+                        "@ArrivalTimeOutbound, @Class, @Airline, @TotalPrice)";
                 }
-               
 
                 command.ExecuteNonQuery();
                 con.Close();

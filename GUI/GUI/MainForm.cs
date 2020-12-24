@@ -20,7 +20,11 @@
             InitializeComponent();
             PrepareTextBoxes();
             PrepareComboBoxes();
-            FillDataGridViewWithFlights();
+            //FillDataGridViewWithFlights();
+            //if(surinktiDuomenysdataGridView.Rows.Count != 0)
+            //{
+            //    markCheapest.Enabled = true;
+            //}
         }
         private void PrepareTextBoxes()
         {
@@ -75,9 +79,6 @@
             {
                 string searchCriteria = FormAndGiveSearchCriteriaToCrawler(origin, destination, departureDate, arrivalDate, flightClass, isRt);
                 StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
-                //ShowMessage();
-                surinktiDuomenysdataGridView.Update();
-                surinktiDuomenysdataGridView.Refresh();
             }
             else
             {
@@ -88,8 +89,14 @@
             {
                 CrawlDataFromList(origin, destination, flightClass);
             }
+            surinktiDuomenysdataGridView.Update();
+            surinktiDuomenysdataGridView.Refresh();
+            FillDataGridViewWithFlights();
+            if (surinktiDuomenysdataGridView.Rows.Count != 0)
+            {
+                markCheapest.Enabled = true;
+            }
         }
-
         private void CrawlDataFromList(string origin, string destination, string flightClass)
         {
             string searchCriteria;
@@ -99,7 +106,6 @@
                 isRt = date.arrivalDate != null ? true : false;
                 searchCriteria = FormAndGiveSearchCriteriaToCrawler(origin, destination, date.departureDate, date.arrivalDate, flightClass, isRt);
                 StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
-                //ShowMessage();
                 surinktiDuomenysdataGridView.Update();
                 surinktiDuomenysdataGridView.Refresh();
             }
@@ -136,12 +142,6 @@
                 }
             }
             return isCorrect;
-        }
-        private void ShowMessage()
-        {
-            string message = "Paieška baigta";
-            string caption = "Pranešimas";
-            var result = MessageBox.Show(message, caption,MessageBoxButtons.OK);
         }
         private void ErrorMessage()
         {
@@ -182,6 +182,11 @@
         {
             DateAddForm dateAddForm = new DateAddForm(this);
             dateAddForm.Show();
+        }
+
+        private void markCheapest_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
