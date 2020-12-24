@@ -75,7 +75,7 @@
             {
                 string searchCriteria = FormAndGiveSearchCriteriaToCrawler(origin, destination, departureDate, arrivalDate, flightClass, isRt);
                 StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
-                ShowMessage();
+                //ShowMessage();
                 surinktiDuomenysdataGridView.Update();
                 surinktiDuomenysdataGridView.Refresh();
             }
@@ -99,7 +99,7 @@
                 isRt = date.arrivalDate != null ? true : false;
                 searchCriteria = FormAndGiveSearchCriteriaToCrawler(origin, destination, date.departureDate, date.arrivalDate, flightClass, isRt);
                 StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
-                ShowMessage();
+                //ShowMessage();
                 surinktiDuomenysdataGridView.Update();
                 surinktiDuomenysdataGridView.Refresh();
             }

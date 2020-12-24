@@ -92,9 +92,19 @@ namespace StarPeru
         private string FormPostBody()
         {
             string isRt = _afo.IsRt ? "R" : "O";
-            return "tipo_viaje=" + isRt + "&origen=" + _afo.Origin + "&destino=" + _afo.Departure +
-                "&date_from=" + _afo.OutboundDay + "%2F" + _afo.OutboundMonth + "%2F" + _afo.OutboundYear +
-                "&date_to=" + _afo.InboundDay + "%2F" + _afo.InboundMonth + "%2F" + _afo.InboundYear + "&cant_adultos=1&cant_ninos=0&cant_infantes=0&codigo_desc=";
+            if(_afo.IsRt)
+            {
+                return "tipo_viaje=" + isRt + "&origen=" + _afo.Origin + "&destino=" + _afo.Departure +
+                "&date_from=" + _afo.OutboundDate.ToString("dd") + "%2F" + _afo.OutboundDate.ToString("MM") + "%2F" + _afo.OutboundYear +
+                "&date_to=" + _afo.InboundDate.ToString("dd") + "%2F" + _afo.InboundDate.ToString("MM") + "%2F" + _afo.InboundYear + "&cant_adultos=1&cant_ninos=0&cant_infantes=0&codigo_desc=";
+            }
+            else
+            {
+                return "tipo_viaje=" + isRt + "&origen=" + _afo.Origin + "&destino=" + _afo.Departure +
+                "&date_from=" + _afo.OutboundDate.ToString("dd") + "%2F" + _afo.OutboundDate.ToString("MM") + "%2F" + _afo.OutboundYear +
+                "&date_to=" + _afo.OutboundDate.ToString("dd") + "%2F" + _afo.OutboundDate.ToString("MM") + "%2F" + _afo.OutboundYear + "&cant_adultos=1&cant_ninos=0&cant_infantes=0&codigo_desc=";
+            }
+            
         }
 
         private List<Flight> ExtractData(string sector)
