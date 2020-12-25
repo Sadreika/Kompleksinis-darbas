@@ -87,10 +87,6 @@
             surinktiDuomenysdataGridView.Update();
             surinktiDuomenysdataGridView.Refresh();
             FillDataGridViewWithFlights(origin, destination, flightClass);
-            if (surinktiDuomenysdataGridView.Rows.Count != 0)
-            {
-                markCheapest.Enabled = true;
-            }
         }
         private void CrawlDataFromList(string origin, string destination, string flightClass)
         {
@@ -185,9 +181,29 @@
             dateAddForm.Show();
         }
 
-        private void markCheapest_Click(object sender, EventArgs e)
+        private void VisiAvialinijosSkrydziaiButton_Click(object sender, EventArgs e)
         {
+            FillDataGridViewWithAirlineFlights(avialinijatextBox.Text);
+        }
 
+        private void FillDataGridViewWithAirlineFlights(string airline)
+        {
+            //surinktiDuomenysdataGridView.Rows.Clear();
+            //surinktiDuomenysdataGridView.Refresh();
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            try
+            {
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM [FlightsDatabase].[dbo].[" + airline + "]", connection);
+                DataTable data = new DataTable();
+                sqlDataAdapter.Fill(data);
+                surinktiDuomenysdataGridView.DataSource = data;
+            }
+            catch
+            {
+            }
+
+            connection.Close();
         }
     }
 }

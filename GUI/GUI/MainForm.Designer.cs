@@ -51,7 +51,7 @@ namespace GUI
             this.atvykimoOroUostasWarning = new System.Windows.Forms.Label();
             this.isvykimoDataWarning = new System.Windows.Forms.Label();
             this.atvykimoDataWarning = new System.Windows.Forms.Label();
-            this.markCheapest = new System.Windows.Forms.Button();
+            this.visiAvialinijosSkrydziaiButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.surinktiDuomenysdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,7 +189,7 @@ namespace GUI
             this.pridetiButton.Location = new System.Drawing.Point(997, 55);
             this.pridetiButton.Margin = new System.Windows.Forms.Padding(4);
             this.pridetiButton.Name = "pridetiButton";
-            this.pridetiButton.Size = new System.Drawing.Size(148, 28);
+            this.pridetiButton.Size = new System.Drawing.Size(148, 30);
             this.pridetiButton.TabIndex = 17;
             this.pridetiButton.Text = "Pridėti datas";
             this.pridetiButton.UseVisualStyleBackColor = true;
@@ -260,23 +260,22 @@ namespace GUI
             this.atvykimoDataWarning.Text = "!";
             this.atvykimoDataWarning.Visible = false;
             // 
-            // markCheapest
+            // visiAvialinijosSkrydziaiButton
             // 
-            this.markCheapest.Location = new System.Drawing.Point(1182, 721);
-            this.markCheapest.Name = "markCheapest";
-            this.markCheapest.Size = new System.Drawing.Size(148, 28);
-            this.markCheapest.TabIndex = 25;
-            this.markCheapest.Text = "Pažymėti pigiausius";
-            this.markCheapest.UseVisualStyleBackColor = true;
-            this.markCheapest.Click += new System.EventHandler(this.markCheapest_Click);
-            this.markCheapest.Enabled = false;
+            this.visiAvialinijosSkrydziaiButton.Location = new System.Drawing.Point(28, 57);
+            this.visiAvialinijosSkrydziaiButton.Name = "visiAvialinijosSkrydziaiButton";
+            this.visiAvialinijosSkrydziaiButton.Size = new System.Drawing.Size(244, 30);
+            this.visiAvialinijosSkrydziaiButton.TabIndex = 25;
+            this.visiAvialinijosSkrydziaiButton.Text = "Visi avialinijos skrydžiai";
+            this.visiAvialinijosSkrydziaiButton.UseVisualStyleBackColor = true;
+            this.visiAvialinijosSkrydziaiButton.Click += new System.EventHandler(this.VisiAvialinijosSkrydziaiButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 756);
-            this.Controls.Add(this.markCheapest);
+            this.Controls.Add(this.visiAvialinijosSkrydziaiButton);
             this.Controls.Add(this.atvykimoDataWarning);
             this.Controls.Add(this.isvykimoDataWarning);
             this.Controls.Add(this.atvykimoOroUostasWarning);
@@ -329,7 +328,7 @@ namespace GUI
         private System.Windows.Forms.Label atvykimoOroUostasWarning;
         private System.Windows.Forms.Label isvykimoDataWarning;
         private System.Windows.Forms.Label atvykimoDataWarning;
-        private System.Windows.Forms.Button markCheapest;
+        private System.Windows.Forms.Button visiAvialinijosSkrydziaiButton;
     }
 }
 
