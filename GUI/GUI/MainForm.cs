@@ -20,11 +20,6 @@
             InitializeComponent();
             PrepareTextBoxes();
             PrepareComboBoxes();
-            //FillDataGridViewWithFlights();
-            //if(surinktiDuomenysdataGridView.Rows.Count != 0)
-            //{
-            //    markCheapest.Enabled = true;
-            //}
         }
         private void PrepareTextBoxes()
         {
@@ -78,7 +73,7 @@
             if(isSearchCriteriaCorrect(origin, destination, departureDate, arrivalDate, flightClass, isRt))
             {
                 string searchCriteria = FormAndGiveSearchCriteriaToCrawler(origin, destination, departureDate, arrivalDate, flightClass, isRt);
-                StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
+                //StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
             }
             else
             {
@@ -91,7 +86,7 @@
             }
             surinktiDuomenysdataGridView.Update();
             surinktiDuomenysdataGridView.Refresh();
-            FillDataGridViewWithFlights();
+            FillDataGridViewWithFlights(origin, destination, flightClass);
             if (surinktiDuomenysdataGridView.Rows.Count != 0)
             {
                 markCheapest.Enabled = true;
@@ -105,7 +100,7 @@
             {
                 isRt = date.arrivalDate != null ? true : false;
                 searchCriteria = FormAndGiveSearchCriteriaToCrawler(origin, destination, date.departureDate, date.arrivalDate, flightClass, isRt);
-                StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
+                //StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
                 surinktiDuomenysdataGridView.Update();
                 surinktiDuomenysdataGridView.Refresh();
             }
@@ -147,13 +142,19 @@
         {
             string message = "Paieškos kriterijai užpildyti neteisingai";
             string caption = "Klaidos pranešimas";
-            var result = MessageBox.Show(message, caption, MessageBoxButtons.OK);
+            MessageBox.Show(message, caption, MessageBoxButtons.OK);
         }
-        private void FillDataGridViewWithFlights()
+        private void FillDataGridViewWithFlights(string origin, string destination, string flightClass)
         {
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM [FlightsDatabase].[dbo].[StarPeru]", connection);
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM [FlightsDatabase].[dbo].[StarPeru] WHERE OriginOutbound = @Origin AND DestinationOutbound = @Destination AND Class = @FlightClass", connection);
+
+            sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@Origin", origin);
+            sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@Destination", destination);
+            sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@FlightClass", flightClass);
+            
             DataTable data = new DataTable();
             sqlDataAdapter.Fill(data);
             surinktiDuomenysdataGridView.DataSource = data;

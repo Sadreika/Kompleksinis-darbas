@@ -30,8 +30,8 @@ namespace StarPeru
                 command.CommandType = CommandType.Text;
                 command.Connection = con;
                 con.Open();
-                command.Parameters.AddWithValue("@OriginOutbound", combination.Outbound.Origin);
-                command.Parameters.AddWithValue("@DestinationOutbound", combination.Outbound.Destination);
+                command.Parameters.AddWithValue("@OriginOutbound", combination.Outbound.Origin.Trim());
+                command.Parameters.AddWithValue("@DestinationOutbound", combination.Outbound.Destination.Trim());
                 command.Parameters.AddWithValue("@ConnectionOutbound", "nėra");
                 command.Parameters.AddWithValue("@PriceOutbound", combination.Outbound.Price);
                 command.Parameters.AddWithValue("@DepartureTimeOutbound", combination.Outbound.DepartureTime);
@@ -39,8 +39,8 @@ namespace StarPeru
 
                 if (combination.Inbound != null)
                 {
-                    command.Parameters.AddWithValue("@OriginInbound", combination.Inbound.Origin);
-                    command.Parameters.AddWithValue("@DestinationInbound", combination.Inbound.Destination);
+                    command.Parameters.AddWithValue("@OriginInbound", combination.Inbound.Origin.Trim());
+                    command.Parameters.AddWithValue("@DestinationInbound", combination.Inbound.Destination.Trim());
                     command.Parameters.AddWithValue("@ConnectionInbound", "nėra");
                     command.Parameters.AddWithValue("@PriceInbound", combination.Inbound.Price);
                     command.Parameters.AddWithValue("@DepartureTimeInbound", combination.Inbound.DepartureTime);
