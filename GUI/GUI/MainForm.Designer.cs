@@ -64,7 +64,7 @@ namespace GUI
             this.ieskotiButton.TabIndex = 0;
             this.ieskotiButton.Text = "Ieškoti";
             this.ieskotiButton.UseVisualStyleBackColor = true;
-            this.ieskotiButton.Click += new System.EventHandler(this.ieskotiButton_Click);
+            this.ieskotiButton.Click += new System.EventHandler(this.IeskotiButton_Click);
             // 
             // avialinijaLabel
             // 
@@ -159,7 +159,7 @@ namespace GUI
             this.isRtCheckBox.TabIndex = 14;
             this.isRtCheckBox.Text = "Dvipusė kelionė";
             this.isRtCheckBox.UseVisualStyleBackColor = true;
-            this.isRtCheckBox.CheckedChanged += new System.EventHandler(this.isRtCheckBox_CheckedChanged);
+            this.isRtCheckBox.CheckedChanged += new System.EventHandler(this.IsRtCheckBox_CheckedChanged);
             // 
             // surinktiDuomenysdataGridView
             // 
@@ -193,7 +193,7 @@ namespace GUI
             this.pridetiButton.TabIndex = 17;
             this.pridetiButton.Text = "Pridėti datas";
             this.pridetiButton.UseVisualStyleBackColor = true;
-            this.pridetiButton.Click += new System.EventHandler(this.pridetiButton_Click);
+            this.pridetiButton.Click += new System.EventHandler(this.PridetiButton_Click);
             // 
             // isvykimoDataDateTimePicker
             // 

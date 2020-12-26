@@ -11,6 +11,7 @@
     {
         public List<Dates> DateList = new List<Dates>();
         private string connectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=FlightsDatabase;Integrated Security=True";
+        private DataTable data = new DataTable();
         public void FillDateList(List<Dates> dates)
         {
             DateList = dates;
@@ -43,7 +44,7 @@
             klaseComboBox.Items.AddRange(suggestionsArray);
             Controls.Add(klaseComboBox);
         }
-        private void ieskotiButton_Click(object sender, EventArgs e)
+        private void IeskotiButton_Click(object sender, EventArgs e)
         {
             string origin = isvykimoOroUostastextBox.Text.ToUpper();
             string destination = atvykimoOroUostastextBox.Text.ToUpper();
@@ -70,10 +71,10 @@
 
             bool isRt = isRtCheckBox.Checked;
 
-            if(isSearchCriteriaCorrect(origin, destination, departureDate, arrivalDate, flightClass, isRt))
+            if(IsSearchCriteriaCorrect(origin, destination, departureDate, arrivalDate, flightClass, isRt))
             {
                 string searchCriteria = FormAndGiveSearchCriteriaToCrawler(origin, destination, departureDate, arrivalDate, flightClass, isRt);
-                //StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
+                StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
             }
             else
             {
@@ -96,12 +97,12 @@
             {
                 isRt = date.arrivalDate != null ? true : false;
                 searchCriteria = FormAndGiveSearchCriteriaToCrawler(origin, destination, date.departureDate, date.arrivalDate, flightClass, isRt);
-                //StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
+                StarPeru.Program.StartStarPeruFromGUI(searchCriteria);
                 surinktiDuomenysdataGridView.Update();
                 surinktiDuomenysdataGridView.Refresh();
             }
         }
-        private bool isSearchCriteriaCorrect(string origin, string destination, DateTime departureDate, DateTime arrivalDate, string flightClass, bool isRt)
+        private bool IsSearchCriteriaCorrect(string origin, string destination, DateTime departureDate, DateTime arrivalDate, string flightClass, bool isRt)
         {
             bool isCorrect = true;
             TimeSpan ts = new TimeSpan(23, 59, 59);
@@ -142,6 +143,10 @@
         }
         private void FillDataGridViewWithFlights(string origin, string destination, string flightClass)
         {
+            if (data != null)
+            {
+                data.Clear();
+            }
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
 
@@ -151,7 +156,6 @@
             sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@Destination", destination);
             sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@FlightClass", flightClass);
             
-            DataTable data = new DataTable();
             sqlDataAdapter.Fill(data);
             surinktiDuomenysdataGridView.DataSource = data;
             connection.Close();
@@ -164,7 +168,7 @@
                 arrivalDate?.Year + "|" + arrivalDate?.Month + "|" + arrivalDate?.Day + "|" +
                 flightClass + "|" + isRtString;
         }
-        private void isRtCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void IsRtCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if(isRtCheckBox.Checked)
             {
@@ -175,27 +179,27 @@
                 atvykimoDataDateTimePicker.Enabled = false;
             }
         }
-        private void pridetiButton_Click(object sender, EventArgs e)
+        private void PridetiButton_Click(object sender, EventArgs e)
         {
             DateAddForm dateAddForm = new DateAddForm(this);
             dateAddForm.Show();
         }
-
         private void VisiAvialinijosSkrydziaiButton_Click(object sender, EventArgs e)
         {
             FillDataGridViewWithAirlineFlights(avialinijatextBox.Text);
         }
-
         private void FillDataGridViewWithAirlineFlights(string airline)
         {
-            //surinktiDuomenysdataGridView.Rows.Clear();
-            //surinktiDuomenysdataGridView.Refresh();
+            if (data != null)
+            {
+                data.Clear();
+            }
+
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             try
             {
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("SELECT * FROM [FlightsDatabase].[dbo].[" + airline + "]", connection);
-                DataTable data = new DataTable();
                 sqlDataAdapter.Fill(data);
                 surinktiDuomenysdataGridView.DataSource = data;
             }
